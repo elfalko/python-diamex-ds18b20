@@ -1,9 +1,9 @@
 # Simple readout for the USB-Temparatur-Sensor-Tester for DS18B20 by diamex.de
-Original sensor and drivers can be found at the [supplier's page](https://www.diamex.de/dxshop/USB-Temperatur-Sensor-Tester-fuer-DS18B20-Rev-C)
+Original sensor and drivers can be found at [diamex.de](https://www.diamex.de/dxshop/USB-Temperatur-Sensor-Tester-fuer-DS18B20-Rev-C)
 
 ## Why
-Diamex does not include a prebuild readout program for linux. They include sources for it, but compiling them did not work out of the box for me due to lack of knowledge about hidraw, libusb and their compatibility with WSL2.
-I lacked the necessary motivation to get that running.
+Diamex does not include a prebuild readout program for linux.
+They include sources for it, but compiling them did not work out of the box for me due to lack of knowledge about hidraw and libusb.
 Also, the codebase in which I will use it is python anyway.
 
 ## How to use
@@ -55,8 +55,3 @@ From the diamex readme.txt:
 
 Rough translation:
 For noncommercial use all sources may be modified or extended in any way.
-
-
-## Useful links
-[supplier's page](https://www.diamex.de/dxshop/USB-Temperatur-Sensor-Tester-fuer-DS18B20-Rev-C)
-
