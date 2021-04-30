@@ -1,0 +1,4 @@
+# in /etc/udev/rules.d/97-diamex-temp-sensor.rules 
+SUBSYSTEM=="usb", ATTR{idVendor}=="16c0", ATTR{idProduct}=="0480", MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl", SYMLINK+="ds18b20%n"
+KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0480", MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl"
+
