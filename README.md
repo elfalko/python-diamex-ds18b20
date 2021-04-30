@@ -2,7 +2,7 @@
 Original sensor and drivers can be found at the [supplier's page](https://www.diamex.de/dxshop/USB-Temperatur-Sensor-Tester-fuer-DS18B20-Rev-C)
 
 ## Why
-Diamex does not include a prebuild readout program for linux. They include sources for it, but compiling them did not work out of the box for me due to problems with hidraw, libusb, and WSL2.
+Diamex does not include a prebuild readout program for linux. They include sources for it, but compiling them did not work out of the box for me due to lack of knowledge about hidraw, libusb and their compatibility with WSL2.
 I lacked the necessary motivation to get that running.
 Also, the codebase in which I will use it is python anyway.
 
@@ -47,9 +47,16 @@ Sensor #2 of 2: 26.4C Power: Extern ID: 0x 28 aa 11 e2 4b 14 01 0b
 ^CClosing the device
 ```
 
+## License
+This is mainly derived from diamex sources and hid tutorial scripts.
+From the diamex readme.txt:
+
+> Zur nichtkommerziellen Verwendung dürfen alle Sourcen beliebig modifiziert oder erweitert werden.
+
+Rough translation:
+For noncommercial use all sources may be modified or extended in any way.
+
+
 ## Useful links
 [supplier's page](https://www.diamex.de/dxshop/USB-Temperatur-Sensor-Tester-fuer-DS18B20-Rev-C)
-
-
-
 
