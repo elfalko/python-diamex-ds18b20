@@ -25,27 +25,53 @@ If they differ, replace them in both the udev rules and the script.
 6. You might need to call `udevadm control --reload-rules` to reload the rules. You might also want to add your user to the `plugdev` group to get access to the device.
 7. Run the script
 ``` bash
-python temp-sensor-readout.py
+python temp-sensor-readout.py 
 ```
 
-The output should look something like this:
+The output should look like this:
+```
+#1/2: 26.5C
+#2/2: 24.4C
+#1/2: 26.4C
+#2/2: 24.4C
+#1/2: 26.4C
+#2/2: 24.4C
+#1/2: 26.3C
+^C
+Closing the device
+```
+
+If you want more info, try the `--verbose` flag:
 ``` bash
-$ python temp-sensor-readout.py
+$ python temp-sensor-readout.py --verbose
 
 Opening the device
 Manufacturer: DIAMEX GmbH
 Product: Temp-Sensor-Tester
-Sensor #1 of 2: 24.7C Power: Extern ID: 0x 28 5e bf 79 97 15 03 9b
-Sensor #2 of 2: 26.4C Power: Extern ID: 0x 28 aa 11 e2 4b 14 01 0b
-Sensor #1 of 2: 24.6C Power: Extern ID: 0x 28 5e bf 79 97 15 03 9b
-Sensor #2 of 2: 26.4C Power: Extern ID: 0x 28 aa 11 e2 4b 14 01 0b
-Sensor #1 of 2: 24.6C Power: Extern ID: 0x 28 5e bf 79 97 15 03 9b
-Sensor #2 of 2: 26.4C Power: Extern ID: 0x 28 aa 11 e2 4b 14 01 0b
-Sensor #1 of 2: 24.6C Power: Extern ID: 0x 28 5e bf 79 97 15 03 9b
-Sensor #2 of 2: 26.4C Power: Extern ID: 0x 28 aa 11 e2 4b 14 01 0b
+Closing the device
+
+Sensor #2 of 2: 26.4C | Power: Extern | ID: 0x 28 aa 11 e2 4b 14 01 0b
+Sensor #1 of 2: 24.6C | Power: Extern | ID: 0x 28 5e bf 79 97 15 03 9b
+Sensor #2 of 2: 26.4C | Power: Extern | ID: 0x 28 aa 11 e2 4b 14 01 0b
+Sensor #1 of 2: 24.6C | Power: Extern | ID: 0x 28 5e bf 79 97 15 03 9b
+Sensor #2 of 2: 26.4C | Power: Extern | ID: 0x 28 aa 11 e2 4b 14 01 0b
+Sensor #1 of 2: 24.6C | Power: Extern | ID: 0x 28 5e bf 79 97 15 03 9b
+Sensor #2 of 2: 26.4C | Power: Extern | ID: 0x 28 aa 11 e2 4b 14 01 0b
 [...]
-^CClosing the device
+^C
+Closing the device
 ```
+
+And if you want just the temperature, try `--sensor_id <sensor_number>`
+```
+$ python temp-sensor-readout.py --sensor_id 1
+23.2
+23.2
+23.2
+^C
+Closing the device
+```
+
 
 ## License
 This is mainly derived from diamex sources and hid tutorial scripts.
